@@ -596,6 +596,19 @@ strong {
     transform: scale(1.05);
 }
 
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .movie-category-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .movie-category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
 /* Container for the download guide section */
 .download-guide-section {
