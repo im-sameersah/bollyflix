@@ -23,3 +23,44 @@ function validateSearch() {
             navToggle.classList.toggle('active');
         });
     });
+
+
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        const navMenu = document.getElementById('nav-menu');
+        const searchBar = document.getElementById('search-bar');
+        
+        if (navMenu.style.display === 'flex') {
+            navMenu.style.display = 'none';
+            searchBar.style.display = 'none';
+        } else {
+            navMenu.style.display = 'flex';
+            searchBar.style.display = 'flex';
+        }
+    });
+    
+    document.getElementById('search-icon').addEventListener('click', function() {
+        const searchBar = document.getElementById('search-bar');
+        
+        if (searchBar.style.display === 'flex') {
+            searchBar.style.display = 'none';
+        } else {
+            searchBar.style.display = 'flex';
+        }
+    });
+
+    
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+        this.classList.toggle('active');
+        document.querySelector('.header nav').classList.toggle('active');
+    });
+
+
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });

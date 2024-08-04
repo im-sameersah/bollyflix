@@ -1,12 +1,14 @@
+/* Existing CSS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
 
 html {
     scroll-behavior: smooth;
+    font-family: 'Poppins', 'Times New Roman', Times, serif;
+
 }
 
 body {
-    font-family: 'poppins', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -18,11 +20,13 @@ body {
     text-align: center;
     padding: 10px 0;
 }
+
 .header nav a, .footer a {
     color: #fff;
     margin: 0 15px;
     text-decoration: none;
 }
+
 .post-section {
     display: flex;
     flex-wrap: wrap;
@@ -39,6 +43,129 @@ body {
     71% { color: #4b0082; }
     85% { color: #9400d3; }
     100% { color: #ff0000; }
+}
+
+/* New CSS for responsiveness and navbar */
+.header {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+}
+
+.header nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 600;
+    position: relative;
+}
+
+.header nav a:hover {
+    color: #f4f4f4;
+}
+
+.header nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #f4f4f4;
+    transition: width .3s;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.header nav a:hover::after {
+    width: 100%;
+}
+
+.header .search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.header .search-bar input {
+    padding: 5px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+}
+
+.header .search-bar button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+.header .search-bar button:hover {
+    background-color: #555;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    
+
+    .header nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .header .nav-toggle {
+        display: block;
+        scroll-behavior: smooth;
+        cursor: pointer;
+    }
+
+    .header .nav-toggle.active + nav {
+        display: flex;
+    }
+
+    .header nav a {
+        margin: 10px 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .header .search-bar {
+        width: 100%;
+    }
+
+    .header .search-bar input {
+        width: calc(100% - 80px);
+    }
+
+    .header .search-bar button {
+        width: 80px;
+    }
 }
 
 .post {
